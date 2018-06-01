@@ -1,0 +1,7 @@
+_todo()
+{
+    local cur=${COMP_WORDS[COMP_CWORD]}
+    COMPREPLY=( $(compgen -W "$(ls $TODO_PATH)" -- $cur) )
+}
+
+complete -F _todo todoFunc
